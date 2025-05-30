@@ -12,5 +12,5 @@ redis_hostname_secret_name    = "redis-hostname"
 redis_primary_key_secret_name = "redis-primary-key"
 node_pool_name                = "system"
 node_count                    = 1
-node_size                     = "Standard_D2ads_v5"
+node_size                     = "Standard_D2ads_v6"
 os_disk_type                  = "Ephemeral"

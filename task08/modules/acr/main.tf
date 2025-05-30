@@ -18,13 +18,14 @@ resource "azurerm_container_registry_task" "build_task" {
     dockerfile_path      = "Dockerfile"
     context_path         = var.git_repo_url
     context_access_token = var.git_pat
-    image_names          = ["${var.app_image_name}:{{.Run.ID}}"]
+    image_names          = ["${var.app_image_name}:latest"]
   }
   timer_trigger {
     name     = "build-schedule"
     schedule = "0 0 * * *" # Run daily at midnight UTC
     enabled  = true
   }
+  
 }
 
 resource "azurerm_container_registry_task_schedule_run_now" "run_now" {
