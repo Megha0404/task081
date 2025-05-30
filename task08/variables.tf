@@ -17,7 +17,7 @@ variable "app_image_name" {
 variable "git_repo_url" {
   description = "The URL of the Git repository containing the application source code"
   type        = string
-  default     = "https://github.com/Suryansh1907/Task081.git"
+  default     = "https://github.com/Megha0404/Task081.git"
 }
 variable "git_pat" {
   description = "The personal access token for accessing the Git repository"
