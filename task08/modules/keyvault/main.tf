@@ -1,22 +1,19 @@
 resource "azurerm_key_vault" "kv" {
-  name                = var.keyvault_name
-  location            = var.location
-  resource_group_name = var.resource_group_name
-  tenant_id           = var.tenant_id
-  sku_name            = var.sku_name
-  tags                = var.tags
+  name                = var.kv_name
+  resource_group_name = var.rg_name
+
+  location = var.location
+  sku_name = var.sku_name
+
+  tenant_id = var.tenant_id
+
+  tags = var.tags
 }
 
-resource "azurerm_key_vault_access_policy" "current_user" {
-  key_vault_id = azurerm_key_vault.kv.id
+resource "azurerm_key_vault_access_policy" "access_policy" {
   tenant_id    = var.tenant_id
-  object_id    = var.current_user_object_id
-
-  secret_permissions = [
-    "Get", "List", "Set", "Delete", "Purge", "Recover", "Backup", "Restore"
-  ]
-
-  lifecycle {
-    ignore_changes = [secret_permissions]
-  }
+  object_id    = var.object_id
+  key_vault_id = azurerm_key_vault.kv.id
+  secret_permissions = ["Get", "Set", "Delete", "Purge",
+  "List", "Recover", "Backup", "Restore"]
 }

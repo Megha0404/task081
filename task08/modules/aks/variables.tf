@@ -1,44 +1,53 @@
-variable "resource_group_name" {
-  description = "The name of the resource group where the AKS cluster will be deployed"
+variable "aks_cluster_name" {
   type        = string
+  description = "sku"
 }
+variable "rg_name" {
+  type        = string
+  description = "sku"
+}
+
 variable "location" {
-  description = "The Azure region where the AKS cluster will be deployed"
   type        = string
+  description = "sku"
 }
-variable "aks_name" {
-  description = "The name of the Azure Kubernetes Service cluster"
+
+variable "dns_prefix" {
   type        = string
+  description = "sku"
 }
-variable "node_pool_name" {
-  description = "The name of the default node pool in the AKS cluster"
+
+variable "system_node_pool_name" {
   type        = string
+  description = "sku"
 }
-variable "node_count" {
-  description = "The number of nodes in the default node pool"
+
+variable "system_node_pool_node_count" {
   type        = number
+  description = "sku"
 }
-variable "node_size" {
-  description = "The VM size for the nodes in the default node pool"
+
+variable "system_node_pool_vm_size" {
   type        = string
+  description = "sku"
 }
-variable "os_disk_type" {
-  description = "The OS disk type for the nodes in the default node pool"
-  type        = string
-}
+
 variable "acr_id" {
-  description = "The ID of the Azure Container Registry for AKS to pull images"
   type        = string
+  description = "sku"
 }
-variable "keyvault_id" {
-  description = "The ID of the Azure Key Vault for AKS to access secrets"
+
+variable "key_vault_id" {
   type        = string
+  description = "sku"
 }
+
 variable "tenant_id" {
-  description = "The Azure tenant ID for the AKS cluster"
   type        = string
+  description = "sku"
 }
+
 variable "tags" {
-  description = "Tags to apply to the AKS resources"
   type        = map(string)
+  description = "sku"
 }

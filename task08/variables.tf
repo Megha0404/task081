@@ -1,66 +1,108 @@
-variable "name_prefix" {
-  description = "The prefix used for naming all resources"
-  type        = string
-}
 variable "location" {
-  description = "The Azure region where resources will be deployed"
   type        = string
+  description = "location"
 }
+
+#acr
 variable "acr_sku" {
-  description = "The SKU tier for the Azure Container Registry"
+  type        = string
+  description = "sku"
+}
+variable "dockerfile_path" {
+  type        = string
+  description = "sku"
+}
+variable "docker_build_context_path" {
+  type        = string
+  description = "sku"
+}
+variable "docker_image_name" {
+  type        = string
+  description = "sku"
+}
+variable "platform_os" {
+  type        = string
+  description = "sku"
+}
+variable "acr_task_name" {
+  type        = string
+  description = "sku"
+}
+variable "context_access_token" {
+  type        = string
+  description = "sku"
+}
+#aci
+variable "aci_container_environment_variables" {
+  type        = map(string)
+  description = "sku"
+}
+
+variable "aci_container_name" {
+  description = "sku"
   type        = string
 }
-variable "app_image_name" {
-  description = "The name of the Docker image to build and deploy"
+
+variable "aci_container_cpu" {
+  description = "sku"
   type        = string
 }
-variable "git_repo_url" {
-  description = "The URL of the Git repository containing the application source code"
+
+variable "aci_container_memory" {
+  description = "sku"
   type        = string
-  default     = "https://github.com/Megha0404/Task081.git"
 }
-variable "git_pat" {
-  description = "The personal access token for accessing the Git repository"
+
+variable "aci_os_type" {
+  description = "sku"
   type        = string
-  sensitive   = true
 }
-variable "redis_capacity" {
-  description = "The capacity of the Azure Redis Cache instance"
-  type        = number
+
+
+#kv
+variable "kv_sku_name" {
+  description = "sku"
+  type        = string
+}
+#redis
+variable "redis_primary_key_secret_name" {
+  description = "sku"
+  type        = string
+}
+
+variable "redis_hostname_secret_name" {
+  type        = string
+  description = "sku"
+}
+
+variable "redis_sku_name" {
+  type        = string
+  description = "sku"
 }
 variable "redis_family" {
-  description = "The SKU family of the Azure Redis Cache instance"
   type        = string
+  description = "sku"
 }
-variable "redis_sku" {
-  description = "The SKU name of the Azure Redis Cache instance"
-  type        = string
-}
-variable "keyvault_sku" {
-  description = "The SKU name for the Azure Key Vault"
-  type        = string
-}
-variable "redis_hostname_secret_name" {
-  description = "The name of the Key Vault secret for the Redis hostname"
-  type        = string
-}
-variable "redis_primary_key_secret_name" {
-  description = "The name of the Key Vault secret for the Redis primary key"
-  type        = string
-}
-variable "node_pool_name" {
-  description = "The name of the default node pool in the AKS cluster"
-  type        = string
-}
-variable "node_count" {
-  description = "The number of nodes in the default node pool"
+variable "redis_capacity" {
   type        = number
+  description = "sku"
 }
-variable "node_size" {
-  description = "The VM size for the nodes in the default node pool"
+
+#aks
+variable "system_node_pool_name" {
   type        = string
+  description = "sku"
 }
-variable "os_disk_type" {
-  description = "The OS disk type for the nodes in the default node pool"
+variable "system_node_pool_node_count" {
+  type        = number
+  description = "sku"
+}
+variable "system_node_pool_vm_size" {
   type        = string
+  description = "sku"
+}
+
+variable "name_prefix" {
+  type        = string
+  description = "sku"
 }
