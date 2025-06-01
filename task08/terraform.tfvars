@@ -8,7 +8,6 @@ platform_os               = "Linux"
 dockerfile_path           = "Dockerfile"
 docker_build_context_path = "https://github.com/Megha0404/task081#main:task08/application"
 docker_image_name         = "cmtr-2olzzm40-mod8-app"
-context_access_token      = "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"
 
 aci_os_type          = "Linux"
 aci_container_name   = "cmtr-2olzzm40-mod8-ci"
